@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function hoverB(){
+document.getElementById("house").style = "fill:darkgreen;";
+
+}
+
+function leaveB(){
+document.getElementById("house").style = "fill:black;";
+}
+
+
+
+function clickTree(id){
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  
+  document.getElementById(id).style.fill = color;
+}
+
+
+</script>
+</head>
+
+<body>
+
+<h1>My first SVG</h1>
+
+<svg height="210" width="500">
+  <polygon points="10,10 10,100 100,100 100,10" style="fill:lightgreen;stroke:darkgreen;stroke-width:10" />
+  <polygon points="100,10 200,10 200,100 100,100" style="fill:tomato;stroke:darkred;stroke-width:10" />
+  <polygon points="125,25 175,25 175,75 125,75" style="fill:black;" id="house" onmouseleave="leaveB()" onmouseenter = "hoverB()" />
+    <circle cx="65" cy="45" r="5" fill="darkgreen" id="tree1" onclick = "clickTree(this.id)"  />
+    <circle cx="35" cy="45" r="5" fill="darkgreen" id="tree2" onclick = "clickTree(this.id)" />
+    <circle cx="55" cy="55" r="5" fill="darkgreen" id="tree3" onclick = "clickTree(this.id)" />
+    <circle cx="65" cy="85" r="5" fill="darkgreen" id="tree4" onclick = "clickTree(this.id)" />
+    <circle cx="25" cy="85" r="5" fill="darkgreen" id="tree5" onclick = "clickTree(this.id)" />
+</svg> 
+ 
+</body>
+</html>
